@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { configValidationSchema } from './core/config.schema';
 import { TaskModule } from './task/task.module';
+import { EnglishClassModule } from './english-class/english-class.module';
 
 @Module({
   imports: [
@@ -10,7 +11,7 @@ import { TaskModule } from './task/task.module';
       isGlobal: true,
     }),
     TaskModule,
+    EnglishClassModule,
   ],
-  providers: [],
 })
 export class AppModule {}
