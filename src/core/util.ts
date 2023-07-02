@@ -11,3 +11,5 @@ export const importDynamic = new Function(
   'modulePath',
   'return import(modulePath)',
 );
+
+export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));

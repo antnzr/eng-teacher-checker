@@ -7,3 +7,7 @@ export const DEFAULT_DATES_LENGTH = 10;
 export const TASK = {
   CHECK_IF_AVAILABLE_TEACHER: 'CHECK_IF_AVAILABLE_TEACHER',
 };
+
+export const Questions = {
+  SURVEY: 'SURVEY',
+};
