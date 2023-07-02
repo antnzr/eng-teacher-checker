@@ -1,5 +1,5 @@
 import 'winston-daily-rotate-file';
-import { format, transports, addColors } from 'winston';
+import { format, transports } from 'winston';
 import * as path from 'path';
 import { WinstonModule } from 'nest-winston';
 
@@ -40,13 +40,6 @@ const log = WinstonModule.createLogger({
     new transports.DailyRotateFile(options.combined),
     new transports.Console(options.console),
   ],
-});
-
-addColors({
-  error: 'bold white redBG',
-  warn: 'bold white cyanBG',
-  info: 'bold white greenBG',
-  debug: 'bold white yellowBG',
 });
 
 export { log };
