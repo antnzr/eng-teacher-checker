@@ -29,7 +29,7 @@ export class TaskService {
 
   checkIfTeacherAvailableJob(dto: CheckTeacherDto): void {
     const job = new CronJob(
-      CronExpression.EVERY_MINUTE,
+      CronExpression.EVERY_5_MINUTES,
       async () => await this.checkIfTeacherAvailable(dto),
       null,
       false,

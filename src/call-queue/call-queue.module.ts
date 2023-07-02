@@ -21,7 +21,7 @@ const queueProvider: Provider = {
 };
 
 /**
- * The module is a queue that allows to call an api with
+ * A queue that allows to call an api with
  * a particular amount of requests per particular amount of time
  */
 @Module({

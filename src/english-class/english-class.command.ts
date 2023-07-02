@@ -38,13 +38,13 @@ export class EnglishClassCommand extends CommandRunner {
 
   async run(params: string[], options?: EngClassCommandOptions): Promise<void> {
     try {
+      console.clear();
       const { teacher, dates } = await this.inquirer.ask<Answers>(
         Questions.SURVEY,
         null,
       );
 
       const { notify } = options;
-
       this.taskService.checkIfTeacherAvailableJob({ teacher, dates, notify });
       if (notify) await this.launchTelegram();
       await justHangingAround();
@@ -77,7 +77,7 @@ export class EnglishClassCommand extends CommandRunner {
       await this.telegram.start();
     } catch (error) {
       this.logger.error(
-        gray(`Failed start telegram bot. Error: ${error.message}`),
+        gray(`Failed to start telegram bot. Error: ${error.message}`),
       );
     }
   }

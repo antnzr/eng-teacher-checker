@@ -16,7 +16,5 @@ export const Questions = {
   SURVEY: 'SURVEY',
 };
 
-export const EVERY_2_MINUTES = '*/2 * * * *';
-
 export const CALL_QUEUE = 'CALL_QUEUE';
 export const TELEGRAM = 'TELEGRAM';
