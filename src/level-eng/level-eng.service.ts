@@ -50,8 +50,10 @@ export class LevelEngService {
   private async getTeacherSchedule(dto: TeacherDateDto): Promise<HTMLString> {
     return lastValueFrom(
       this.httpService
-        .get(`/tutors/${dto.teacher}/daily-schedule/?date=${dto.date}`)
-        .pipe(map((response: AxiosResponse) => response.data as HTMLString))
+        .get<HTMLString>(
+          `/tutors/${dto.teacher}/daily-schedule/?date=${dto.date}`,
+        )
+        .pipe(map((response: AxiosResponse) => response.data))
         .pipe(timeout(DEFAULT_TIMEOUT))
         .pipe(
           catchError((error) =>

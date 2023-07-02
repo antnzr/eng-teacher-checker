@@ -12,4 +12,8 @@ export const importDynamic = new Function(
   'return import(modulePath)',
 );
 
-export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+export const sleep = (ms: number): Promise<unknown> =>
+  new Promise((r) => setTimeout(r, ms));
+
+export const justHangingAround = async (): Promise<unknown> =>
+  await sleep(24 * 60 * 60 * 1000);

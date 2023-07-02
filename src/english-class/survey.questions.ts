@@ -17,7 +17,7 @@ export class SurveyQuestions {
   @Question({
     type: 'checkbox',
     name: 'dates',
-    message: 'Choose dates.',
+    message: 'Choose the dates',
     choices: getDates(),
     validate(input: string[] | null): boolean {
       if (!input?.length || input?.length > 5) throw new Error('Min 1, max 5');
