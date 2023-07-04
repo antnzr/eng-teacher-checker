@@ -1,5 +1,5 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
-import { CronExpression, SchedulerRegistry } from '@nestjs/schedule';
+import { SchedulerRegistry } from '@nestjs/schedule';
 import { CALL_QUEUE, DEFAULT_TIMEZONE, TASK, TELEGRAM } from '../constants';
 import { CheckTeacherDto } from './dto';
 import { CronJob } from 'cron';
@@ -29,7 +29,7 @@ export class TaskService {
 
   checkIfTeacherAvailableJob(dto: CheckTeacherDto): void {
     const job = new CronJob(
-      CronExpression.EVERY_5_MINUTES,
+      dto.interval,
       async () => await this.checkIfTeacherAvailable(dto),
       null,
       false,

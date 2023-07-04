@@ -9,7 +9,7 @@ import { importDynamic } from '../core/util';
 import type Queue from 'p-queue';
 export type CallQueue = Queue;
 
-const queueProvider: Provider = {
+export const queueProvider: Provider = {
   provide: CALL_QUEUE,
   useFactory: async () => {
     const { default: Queue } = await importDynamic('p-queue');
